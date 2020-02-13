@@ -42,7 +42,7 @@ class PageDetailView(DetailView):
 
     def get(self, request, slug):
         """ Returns a specific of wiki page by slug. """
-        page = get_object_or_404(Page, pk=slug)
+        page = get_object_or_404(pk=slug)
         return render(request, 'page.html', {'page':page})
 
     def post(self, request, slug):

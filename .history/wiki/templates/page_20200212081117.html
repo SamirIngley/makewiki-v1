@@ -1,0 +1,6 @@
+<ul>
+    {% for choice in page.choice_set.all %}
+        <li>{{choice.choice_text}}</li>
+        <li><a href="{% url 'wiki-list-page' page.id%}">{{ page.title }}</a></li>
+    {% endfor %}
+</ul>

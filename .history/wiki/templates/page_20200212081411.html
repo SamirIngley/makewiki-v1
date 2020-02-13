@@ -1,0 +1,6 @@
+<ul>
+    {% for page %}
+        <li>{{ page.content }}</li>
+        <li><a href="{% url 'wiki-list-page' page.id%}">{{ page.title }}</a></li>
+    {% endfor %}
+</ul>

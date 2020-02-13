@@ -1,7 +1,7 @@
 {% if all_pages %}
     <ul>
         {% for page in all_pages %}
-            {{ page.title }}
+            <li><a href="{% url 'wiki-detail-page' page.id%}">{{ page.title }}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
