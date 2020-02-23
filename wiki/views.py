@@ -4,7 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 
-class PageList(ListView):
+class PageListView(ListView):
     """
     Returns list.html template with all page objects.
     CHALLENGES:
@@ -16,8 +16,8 @@ class PageList(ListView):
 
     def get(self, request):
         """ Returns a list of wiki pages. """
-        all_pages = Page.objects.all()
-        return render(request, 'list.html', {'all_pages':all_pages})
+        pages = self.get_queryset().all()
+        return render(request, 'list.html', {'pages':pages})
 
 
 class PageDetailView(DetailView):
